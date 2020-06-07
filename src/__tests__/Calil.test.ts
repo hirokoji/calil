@@ -12,7 +12,7 @@ describe('Calil test', () => {
             const library = 'Aomori_Pref';
             const statusList = await calil.check(isbn, library);
             if(!(statusList instanceof Error)){
-                expect(statusList[0]).toEqual({libraryName:'青県図' , status: '貸出可'});
+                expect(statusList).toEqual([{libraryName:'青県図' , status: '貸出可'}]);
             }
         });
     });

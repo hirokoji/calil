@@ -5,6 +5,7 @@ export type BookStatus = {
   status: "貸出可" |  "蔵書あり"| "館内のみ" | "貸出中" | "予約中" | "準備中"| "休館中" | "蔵書なし";
 };
 export class Calil {
+
          private secretKey: string;
          private format = "json";
 
@@ -31,6 +32,7 @@ export class Calil {
 
            return bookStatusList
          }
+
 }
 
        
