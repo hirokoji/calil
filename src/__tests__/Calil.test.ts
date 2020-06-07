@@ -5,7 +5,7 @@ describe('Calil test', () => {
 
 
     describe('check API', () => {
-        it('should not return undefined  when search results are proper', async () => {
+        it(`should return {libraryName:'青県図' , status: '貸出可'}`, async () => {
             const calil = new Calil(config.SECRET_KEY);
 
             const isbn = '4834000826';
