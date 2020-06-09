@@ -43,6 +43,15 @@ export class Calil {
         const response: AxiosResponse = await axios.get(url);
         return response.data;
     }
+
+    async getLibraries(pref: Prefecture, city: string) {
+
+        const url = encodeURI(`http://api.calil.jp/library?appkey=${this.secretKey}&format=json&callback=no&pref=${pref}&city=${city}`);
+
+        const response: AxiosResponse = await axios.get(url);
+        const fixBrokenJson = () => response.data.replace(');', '');
+        return JSON.parse(fixBrokenJson());
+    }
 }
 
        
