@@ -15,6 +15,9 @@ describe('Calil test', () => {
                 expect(statusList).toEqual([{libraryName:'青県図' , status: '貸出可'}]);
             }
         });
+
+
+
     });
 
 });
