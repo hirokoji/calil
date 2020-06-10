@@ -7,11 +7,14 @@ const main = async () => {
 
     const calil = new Calil(config.SECRET_KEY);
 
-    const cities = await calil.getAllCities('愛知県');
-    const libraries = await calil.getLibraries('愛知県', '名古屋市');
+    const pref = '愛知県';
+    const cities = await calil.getAllCities(pref);
+    const city = cities['な'][1];
+
+    const libraries = await calil.getLibraries(pref, city);
+    const systemid = libraries[4].systemid;
 
     const isbn = '4834000826';
-    const systemid = libraries[4].systemid;
     const books = await calil.checkBookAvailability(isbn, systemid);
     console.log(books);
 }
