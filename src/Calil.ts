@@ -18,7 +18,7 @@ export class Calil {
         this.secretKey = secretKey;
     }
 
-    async check(isbn: string, systemid: string): Promise<Error | BookStatus[]> {
+    async checkBookAvailability(isbn: string, systemid: string): Promise<Error | BookStatus[]> {
 
         const url = `http://api.calil.jp/check?appkey=${this.secretKey}&isbn=${isbn}&systemid=${systemid}&format=${this.format}&callback=no`;
         const response: AxiosResponse = await axios.get(url);

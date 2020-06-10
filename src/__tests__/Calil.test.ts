@@ -10,7 +10,7 @@ describe('Calil test', () => {
 
             const isbn = '4834000826';
             const library = 'Aomori_Pref';
-            const statusList = await calil.check(isbn, library);
+            const statusList = await calil.checkBookAvailability(isbn, library);
             if(!(statusList instanceof Error)){
                 expect(statusList).toEqual([{libraryName:'青県図' , status: '貸出可'}]);
             }
