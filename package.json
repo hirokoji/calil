@@ -44,7 +44,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hirokoji/calil.git",
+    "url": "git+https://github.com/hirokoji/calil.git"
   },
   "homepage": "https://github.com/hirokoji/calil",
   "bugs": {

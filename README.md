@@ -5,6 +5,7 @@ This script help calil api easer.
 ## Install
 
 ```shell script
+$ npm install calil
 ```
 
 ## Usage
@@ -36,7 +37,7 @@ main();
 
 you could get result like below
 ```shell script
-$ npm start                                                                              ✔  2258  08:17:24
+$ npm start
 
 [
   { libraryName: '鶴舞', status: '貸出可' },

@@ -1,12 +1,11 @@
 import {Calil, BookStatus} from '../Calil';
-import * as config from '../../config.json';
 
 describe('Calil test', () => {
 
 
     describe('check API', () => {
         it(`should return {libraryName:'青県図' , status: '貸出可'}`, async () => {
-            const calil = new Calil(config.SECRET_KEY);
+            const calil = new Calil(`SECRET_KEY`);
 
             const isbn = '4834000826';
             const library = 'Aomori_Pref';
