@@ -1,6 +1,6 @@
 # calil
 
-This script help calil api easer.
+This script help calil api easier.
 
 ## Install
 
