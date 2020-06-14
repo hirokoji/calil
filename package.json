@@ -1,6 +1,6 @@
 {
   "name": "calil",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easy to use calil api with typescript",
   "preferGlobal": true,
   "main": "dist/index.js",
