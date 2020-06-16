@@ -1,2 +1,1 @@
-export {Calil} from "./Calil";
-
+export {Calil, Prefecture, BookStatus} from "./Calil";
