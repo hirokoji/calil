@@ -26,7 +26,8 @@ export class Calil {
         if (response?.status !== 200) {
             return new Error(`[Error] response status invalid. status code: ${response?.status}`);
         }
-        if (!response?.data?.books[isbn][systemid]['libkey']) {
+
+        if ( !response.data.books[isbn][systemid] || !response.data.books[isbn][systemid]['libkey'] ) {
             return new Error(`[Error] libkey undefined.  Recived data from web api: ${JSON.stringify(response.data)}`);
         }
 
