@@ -10,7 +10,6 @@ export type BookStatus = {
 };
 
 export class Calil {
-
     private secretKey: string;
     private format = "json";
 
@@ -35,6 +34,7 @@ export class Calil {
         const bookStatusList: BookStatus[] = Object.keys(libkey).map((libraryName: string) => {
             return {libraryName, status: libkey[libraryName]};
         });
+        
 
         return bookStatusList
     }
@@ -43,6 +43,7 @@ export class Calil {
         const url = encodeURI(`http://api.calil.jp/citylist?pref=${pref}&format=json&callback=no`);
         const response: AxiosResponse = await axios.get(url);
         return response.data;
+        
     }
 
     async getLibraries(pref: Prefecture, city: string) {
