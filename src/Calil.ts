@@ -64,7 +64,16 @@ export class Calil {
 
   async checkBookAvailability(isbn: string, systemid: string): Promise<Error | BookStatus[]> {
     const url = `http://api.calil.jp/check?appkey=${this.secretKey}&isbn=${isbn}&systemid=${systemid}&format=${this.format}&callback=no`;
-    const response: AxiosResponse = await axios.get(url);
+
+    let response: AxiosResponse | undefined = undefined;
+
+    // Sometimes Calil API return unexpected response which doesn't have libkey, so try to get correct response max three times.
+    for(let i = 0; i <3; i++){
+      response = await axios.get(url);
+      if(response?.data.books[isbn][systemid]['libkey']){
+        break;
+      }
+    }
 
     if (response?.status !== 200) {
       return new Error(`[Error] response status invalid. status code: ${response?.status}`);
